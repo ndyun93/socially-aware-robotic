@@ -358,7 +358,7 @@ myCobot.writeAngles(up2_2, 20);
 delay(2000); 
 myCobot.writeAngle((Joint)1, 0, 20);
 delay(2000); 
-myCobot.writeAngles(pick, 20);
+myCobot.writeAngles(pick1, 20);
 delay(5000);
 grip(2);
   }
