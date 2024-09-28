@@ -16,18 +16,18 @@ Angles angles = {0, 0, 0, 0, 0, 0};
 Angles bow = { 0, -50, -50, -45, 0, 0};
 Angles poi = {  0, 0,50,  50, 0, -90};
 // ----------------------------------------------------
-Angles pick ={15, -45, -90,-45, -160,-180}; // pick -> p1
+Angles pick ={15, -45, -90,-45, -150,-180}; // pick -> p1
 //Angles up_alt ={15, -32.5, -115,-32.5, -160,-180};
-Angles pick1 ={15, -25, -130,-25, -160,-180};
-Angles back ={-45, -25, -130,-25, -160,-180};
-Angles up1 ={15, 0, -90,-90, -160,-180};
+Angles pick1 ={15, -25, -130,-25, -150,-180};
+Angles back ={-45, -25, -130,-25, -150,-180};
+Angles up1 ={15, 0, -90,-90, -150,-180};
 
-Angles down ={-45, -45, -90,-45, -160,-180};
+Angles down ={-45, -45, -90,-45, -150,-180};
 // -
-Angles pick2 ={15, -90,   0, -90, -160,-180};
-Angles up2 =  {15,   0, -90, -90, -160,-180};
-Angles down2 ={-15, -45, -90,-45, -160,-180};
-Angles up2_2 ={-15, 0, -90,-90, -160,-180};
+Angles pick2 ={15, -90,   0, -90, -150,-180};
+Angles up2 =  {15,   0, -90, -90, -150,-180};
+Angles down2 ={-15, -90, 0,-90, -150,-180};
+Angles up2_2 ={-15, 0, -90,-90, -150,-180};
 
 
 //--servo motor setup for pwm--
@@ -178,7 +178,7 @@ void grip(int m){
         delay(1000);
       }
     if(m == 2){
-        servo_write(0,  -10);
+        servo_write(0,  10);
         servo_write(11, 10);
         servo_write(12, 90);
         servo_write(13, 90);
@@ -321,24 +321,27 @@ delay(5000);
 grip(2);
 }
 //  -------------------------
-  void p2(){
+
+
+void p2(){
   delay(500);
 //  default position
   myCobot.writeAngles(pick1, 20);
 //  delay(8000);
   delay(2000);
-  grip(2); //grip
+//  grip(2); //grip
+  servo_write(0, 10);
   delay(2000);
-  myCobot.writeAngles(up1, 20);
+  myCobot.writeAngles(up1, 70);
   delay(2000);
   myCobot.writeAngle((Joint)1, -45, 20);
   delay(2000);
-  myCobot.writeAngles(down, 20);
+  myCobot.writeAngles(down, 40);
   delay(5000);
   grip(1);
   delay(2000);
-  myCobot.writeAngles(up1, 20);
-  delay(5000);
+  myCobot.writeAngles(up1, 70);
+  delay(2000);
   myCobot.writeAngle((Joint)1, 15, 20);
   delay(2000);
 //  ------2nd bottle
@@ -346,15 +349,15 @@ myCobot.writeAngles(pick2, 20);
 delay(5000);
 grip(2);
 delay(2000);
-myCobot.writeAngles(up2, 20);
+myCobot.writeAngles(up2, 70);
 delay(2000);
 myCobot.writeAngle((Joint)1, -15, 20);
 delay(2000);
-myCobot.writeAngles(down2, 20);
+myCobot.writeAngles(down2, 40);
 delay(5000);
 grip(1);
 delay(2000); 
-myCobot.writeAngles(up2_2, 20);
+myCobot.writeAngles(up2_2, 70);
 delay(2000); 
 myCobot.writeAngle((Joint)1, 0, 20);
 delay(2000); 
