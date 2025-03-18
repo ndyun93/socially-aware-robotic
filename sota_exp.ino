@@ -20,7 +20,7 @@ Angles pick ={15, -45, -90,-45, -150,-180}; // pick -> p1
 //Angles up_alt ={15, -32.5, -115,-32.5, -160,-180};
 Angles pick1 ={15, -25, -130,-25, -150,-180};
 // -------------------------------------------------------
-Angles sota_default_pos ={0, -25, -90,-25, -150,-180};
+Angles sota_default_pos ={0, -45, -90,-25, -150,-180};
 Angles sota_pick_back_pos ={0, 0, -130,-25, -150,-180};
 Angles sota_up ={0, 0, -90,-90, -150,-180};
 Angles sota_up_turn ={-90, 0, -90,-90, -150,-180};
@@ -167,7 +167,7 @@ void grip(int m){
         delay(10);
       }
     if(m == 3){
-        servo_write(0, 10);
+        servo_write(0, 15);
         delay(1000);
       }
 }
@@ -362,9 +362,9 @@ myCobot.writeAngles(pick1, 20);
 void sota_exp(){
 delay(10);
 myCobot.writeAngles(sota_default_pos,30);//Angles sota_default_pos ={0, -25, -90,-25, -150,-180};
-delay(1000);
+delay(5000);
 grip(2); //grip
-delay(1000);
+delay(2000);
 myCobot.writeAngles(sota_pick_back_pos,30);
 delay(1000);
 myCobot.writeAngles(sota_up,30); //sota_up ={0, 0, -90,-90, -150,-180};
@@ -372,9 +372,9 @@ delay(1000);
 myCobot.writeAngles(sota_up_turn,30); //sota_up_turn ={-90, 0, -90,-90, -150,-180};
 delay(1000);
 myCobot.writeAngles(sota_down2,30); //down2 ={-90, -90, 0,-90, -150,-180};
-delay(1000);
+delay(5000);
 grip(1);
-delay(1000);
+delay(2000);
 myCobot.writeAngles(sota_default_pos,30); //sota_default_pos ={0, -25, -90,-25, -150,-180};
 delay(1000);
 grip(2);
@@ -384,9 +384,9 @@ delay(1000);
 void sota_d(){
   delay(10);
   myCobot.writeAngles(sota_default_pos,30);//Angles sota_default_pos ={0, -25, -90,-25, -150,-180};
-  delay(1000);
+  delay(5000);
   grip(2); //grip
-  delay(1000);
+  delay(2000);
   myCobot.writeAngles(sota_pick_back_pos,30);
   delay(1000);
   myCobot.writeAngles(sota_up,30); //sota_up ={0, 0, -90,-90, -150,-180};
